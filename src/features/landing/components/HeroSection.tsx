@@ -24,11 +24,11 @@ export default function HeroSection() {
 
       </div>
 
-      <div className="flex w-[822px] h-[560px] items-center gap-[52px] ml-[120px]">
+      {/* <div className="flex w-[822px] h-[560px] items-center gap-[52px] ml-[120px]">
         <BookCard image={img2.src}/>
         <BookCard image={img1.src}/>
-      </div>
-
+      </div> */}
+      
     </section>
   );
 }

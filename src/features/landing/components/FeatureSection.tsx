@@ -18,24 +18,25 @@ export default function FeatureSection() {
 
       <FriendCard />
 
-      <div className="grid md:grid-cols-2 items-center gap-12">
+      <div className="flex items-center gap-[130px]">
 
-        <div className="bg-gray-300 w-full h-[260px] rounded-lg" />
+        <div className="bg-gray-300 w-[600px] h-[360px] rounded-lg" />
 
-        <div>
-          <h3 className="text-2xl font-semibold mb-4">
+        <div className="flex w-[520px] flex-col items-start gap-9">
+          <h3 className="text-black font-poppins text-[40px] not-italic font-bold leading-[normal] self-stretch4">
             Read with Friends
           </h3>
-
-          <p className="text-gray-600">
-            Tambahkan reaksi langsung pada bagian tertentu dari buku
-            tanpa takut spoiler.
-          </p>
-
-          <p className="text-gray-600 mt-4">
-            Komentar akan tetap terkunci bagi peserta lain sampai mereka
-            mencapai bagian tersebut dalam proses membaca mereka.
-          </p>
+        <div className="text-black font-poppins text-3xl not-italic font-medium leading-[normal] self-stretch">
+            <p>
+                Tambahkan reaksi langsung pada bagian tertentu dari buku
+                tanpa takut spoiler.
+            </p>
+            <br></br>
+            <p>
+                Komentar akan tetap terkunci bagi peserta lain sampai mereka
+                mencapai bagian tersebut dalam proses membaca mereka.
+            </p>
+            </div> 
 
         </div>
 
