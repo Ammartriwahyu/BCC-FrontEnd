@@ -1,6 +1,6 @@
 "use client";
 
-import Navbar from "@/components/Navbar";
+import Navbar2 from "@/components/Navbar2";
 import Footer from "@/components/Footer";
 import { useUserStore } from "@/lib/userStore";
 import { useState } from "react";
@@ -21,9 +21,9 @@ export default function ProfilePage() {
 
     return (
         <>
-            <Navbar />
+            <Navbar2 />
 
-            <main className="pt-[100px] px-20 bg-[#FFFDF9] min-h-screen">
+            <main className="pt-[120px] px-20 bg-[#FFFDF9] min-h-screen">
 
                 {/* HEADER */}
                 <div className="flex justify-between items-start">
