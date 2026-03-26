@@ -16,7 +16,7 @@ export default function QuoteSection() {
 
         <div className="w-[300px] p-4 bg-white shadow rounded-xl">
           {/* ini card review */}
-          // isi nanti (avatar, rating, dll)
+          {/* // isi nanti (avatar, rating, dll) */}
         </div>
 
         <div className="w-[300px] p-4 bg-white shadow rounded-xl" />

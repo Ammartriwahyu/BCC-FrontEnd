@@ -6,7 +6,7 @@ export default function RegisterPage() {
     <AuthLayout
       illustration={
         <div className="w-[350px] h-[350px] bg-white/20 rounded-xl">
-          {/* ini buat gambar ilustrasi register */}
+          {/*buat gambar ilustrasi register */}
         </div>
       }
     >

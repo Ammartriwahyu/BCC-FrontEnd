@@ -27,7 +27,7 @@ export default function HeroSection() {
         <div className="w-[180px] h-[260px] bg-gray-500 rounded-xl" />
 
         {/* nanti lu ganti pakai <Image /> */}
-        // ini kode untuk gambar buku di hero section
+        {/*  ini kode untuk gambar buku di hero section */}
       </div>
 
     </section>

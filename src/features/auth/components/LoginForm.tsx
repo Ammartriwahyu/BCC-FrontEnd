@@ -1,9 +1,21 @@
+"use client";
+
 import { Input } from "@/components/ui/Input";
 import { Button } from "@/components/ui/Button";
 import { Checkbox } from "@/components/ui/Checkbox";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function LoginForm() {
+  const router = useRouter();
+
+  const handleLogin = () => {
+    //disini lu masukin logic auth (API)
+    
+    // sementara dummy dulu
+    router.push("/home");
+  };
+
   return (
     <div className="space-y-6">
 
@@ -43,7 +55,11 @@ export default function LoginForm() {
       </div>
 
       {/* BUTTON */}
-      <Button variant="cta" className="w-full">
+      <Button
+        variant="cta"
+        className="w-full"
+        onClick={handleLogin}
+      >
         Login
       </Button>
 

@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="px-20 py-16">
+    <footer className="px-20 py-16 bg-[#FFFDF9]">
 
       {/* TOP */}
       <div className="flex justify-between items-center mb-10">

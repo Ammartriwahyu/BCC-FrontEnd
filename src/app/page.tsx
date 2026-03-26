@@ -12,7 +12,7 @@ export default function Home() {
     <>
       <Navbar />
 
-      <main className="bg-[#FFFDF9] min-h-screen">
+      <main className="bg-[#FFFDF9] min-h-screen pt-[100px]">
         <HeroSection />
         <FeatureSection />
         <QuoteSection />
