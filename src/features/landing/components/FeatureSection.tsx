@@ -1,46 +1,35 @@
 import TrackingCard from "@/features/tracking/components/TrackingCard";
-import FriendCard from "@/features/friends/components/FriendCard";
 
 export default function FeatureSection() {
   return (
-    <section className="max-w-[1200px] mx-auto px-6 py-24 space-y-32">
-        <div className="flex w-[1278px] flex-col items-center gap-[148px]">
-            <p className="w-[774px] h-[130px] text-black text-center font-poppins text-[24px] font-bold">
-                Temukan buku-buku menarik, bagikan pendapatmu, dan lihat <p className="text-black font-poppins text-[24px] font-medium">apa yang
-                sedang dibaca oleh orang lain. Platform ini membantu kamu</p> menyimpan,
-                melacak, dan mengeksplorasi <p className="text-black font-poppins text-[24px] font-medium">berbagai cerita dari berbagai genre
-                dalam satu tempat.</p>
-            </p>
+    <section className="max-w-[1200px] mx-auto px-6 py-24 space-y-16">
 
-            <TrackingCard />
-
-        </div>
-
-      <FriendCard />
-
-      <div className="flex items-center gap-[130px]">
-
-        <div className="bg-gray-300 w-[600px] h-[360px] rounded-lg" />
-
-        <div className="flex w-[520px] flex-col items-start gap-9">
-          <h3 className="text-black font-poppins text-[40px] not-italic font-bold leading-[normal] self-stretch4">
-            Read with Friends
-          </h3>
-        <div className="text-black font-poppins text-3xl not-italic font-medium leading-[normal] self-stretch">
-            <p>
-                Tambahkan reaksi langsung pada bagian tertentu dari buku
-                tanpa takut spoiler.
-            </p>
-            <br></br>
-            <p>
-                Komentar akan tetap terkunci bagi peserta lain sampai mereka
-                mencapai bagian tersebut dalam proses membaca mereka.
-            </p>
-            </div> 
-
-        </div>
-
+      {/* DESCRIPTION */}
+      <div className="text-center max-w-[700px] mx-auto">
+        <p className="text-lg font-medium">
+          Temukan buku-buku menarik, bagikan pendapatmu, dan lihat apa yang sedang dibaca oleh orang lain.
+          Platform ini membantu kamu menyimpan, melacak, dan mengeksplorasi berbagai cerita dari berbagai genre dalam satu tempat.
+        </p>
       </div>
+
+      {/* TOP 2 CARDS */}
+      <div className="grid grid-cols-2 gap-6">
+        <TrackingCard
+          title="Tracking"
+          description="Pantau progres bacaanmu dengan mudah. Tandai buku yang sedang dibaca, yang sudah selesai, atau yang ingin kamu baca nanti."
+        />
+        <TrackingCard
+          title="Add Friends"
+          description="Tambahkan teman untuk melihat aktivitas membaca mereka, berbagi rekomendasi buku, dan menemukan bacaan baru."
+        />
+      </div>
+
+      {/* FULL WIDTH CARD */}
+      <TrackingCard
+        title="Read with Friends"
+        description="Tambahkan reaksi langsung tanpa spoiler. Komentar akan tetap terkunci sampai temanmu mencapai bagian tersebut."
+        fullWidth
+      />
 
     </section>
   );

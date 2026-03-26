@@ -1,14 +1,29 @@
 export default function QuoteSection() {
   return (
-    <section className="text-center py-24">
+    <section className="py-24 text-center space-y-12">
 
-      <p className="text-lg italic text-gray-700">
-        “A reader lives a thousand lives before he dies.”
-      </p>
+      <div>
+        <h2 className="text-2xl font-bold">
+          Every reading journey looks a little different.
+        </h2>
+        <p className="text-gray-500">
+          Lihat ulasan dan pengalaman membaca dari pengguna lain.
+        </p>
+      </div>
 
-      <p className="mt-4 font-semibold">
-        — George R.R. Martin
-      </p>
+      {/* REVIEW CARDS */}
+      <div className="flex justify-center gap-6">
+
+        <div className="w-[300px] p-4 bg-white shadow rounded-xl">
+          {/* ini card review */}
+          // isi nanti (avatar, rating, dll)
+        </div>
+
+        <div className="w-[300px] p-4 bg-white shadow rounded-xl" />
+
+        <div className="w-[300px] p-4 bg-white shadow rounded-xl" />
+
+      </div>
 
     </section>
   );

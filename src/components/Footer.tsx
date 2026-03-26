@@ -1,30 +1,43 @@
 export default function Footer() {
   return (
-    <footer className="w-full bg-[#E4D9D4] flex justify-between items-center px-[76px] py-[104px]">
+    <footer className="px-20 py-16">
 
-      <div>
-        <h1 className="text-white font-bold text-[36px] font-Poppins">
+      {/* TOP */}
+      <div className="flex justify-between items-center mb-10">
+
+        {/* LOGO */}
+        <h1 className="text-xl font-bold">
           ReadWrite
         </h1>
+
+        {/* MENU */}
+        <div className="flex gap-10 text-sm text-gray-700">
+          <span>Experience</span>
+          <span>News</span>
+          <span>About us</span>
+          <span>Jobs</span>
+          <span>Contact</span>
+        </div>
+
+        {/* ICON */}
+        <div className="flex items-center gap-6 text-gray-700">
+
+          {/* ini buat icon instagram */}
+          <div className="w-5 h-5 bg-gray-400 rounded-full" />
+
+          {/* ini buat icon phone */}
+          <div className="w-5 h-5 bg-gray-400 rounded-full" />
+
+          {/* ini buat icon email */}
+          <div className="w-5 h-5 bg-gray-400 rounded-full" />
+
+        </div>
+
       </div>
 
-      <div className="flex flex-col gap-4 w-[415px]">
-
-        <div className="flex items-center gap-3 text-white">
-         
-          <span>@lorem ipsum</span>
-        </div>
-
-        <div className="flex items-center gap-3 text-white">
-   
-          <span>0812-6767-9987</span>
-        </div>
-
-        <div className="flex items-center gap-3 text-white">
-     
-          <span>ReadWrite@gmail.com</span>
-        </div>
-
+      {/* BOTTOM */}
+      <div className="text-sm text-gray-400">
+        © Copyright 2019 - Lift Media
       </div>
 
     </footer>

@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import HeroSection from "@/features/landing/components/HeroSection";
 import FeatureSection from "@/features/landing/components/FeatureSection";
 import QuoteSection from "@/features/landing/components/QuoteSection";
+import StreakSection from "@/features/landing/components/StreakSection";
 import CTASection from "@/features/landing/components/CTASection";
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
         <HeroSection />
         <FeatureSection />
         <QuoteSection />
+        <StreakSection />
         <CTASection />
       </main>
 
