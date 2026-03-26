@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/Button";
+import Link from "next/link";
 
 export default function CTASection() {
   return (
@@ -14,9 +15,11 @@ export default function CTASection() {
           Bergabunglah dengan ribuan pembaca yang menemukan buku favorit mereka di sini.
         </p>
 
-        <Button variant="cta" size="lg">
-          Mulai Sekarang →
-        </Button>
+        <Link href="/login" target="_blank" rel="noopener noreferrer">
+          <Button variant="cta" size="lg">
+            Mulai Sekarang →
+          </Button>
+        </Link>
 
       </div>
 
