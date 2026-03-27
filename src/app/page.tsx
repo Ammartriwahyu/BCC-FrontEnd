@@ -3,9 +3,9 @@ import Footer from "@/components/Footer";
 
 import HeroSection from "@/features/landing/components/HeroSection";
 import FeatureSection from "@/features/landing/components/FeatureSection";
-import QuoteSection from "@/features/landing/components/QuoteSection";
 import StreakSection from "@/features/landing/components/StreakSection";
 import CTASection from "@/features/landing/components/CTASection";
+import ReviewSection from "@/features/landing/components/ReviewSection";
 
 export default function Home() {
   return (
@@ -15,7 +15,7 @@ export default function Home() {
       <main className="bg-[#FFFDF9] min-h-screen pt-[100px]">
         <HeroSection />
         <FeatureSection />
-        <QuoteSection />
+        <ReviewSection />
         <StreakSection />
         <CTASection />
       </main>

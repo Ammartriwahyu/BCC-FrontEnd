@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 type Props = {
   name: string;
   title: string;
@@ -25,7 +27,7 @@ export default function ReviewCard({ name, title, review }: Props) {
 
       {/* RIGHT */}
       <div className="w-[100px] h-[140px] bg-gray-300 rounded-lg">
-        {/* ini gambar buku */}
+        <Image src="/assets/images/Books/murder.png" alt={title} width={100} height={140} />
       </div>
 
     </div>
