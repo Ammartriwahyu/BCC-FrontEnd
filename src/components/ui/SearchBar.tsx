@@ -27,8 +27,8 @@ export default function SearchBar({ setIsFocused }: any) {
           className="
       w-full 
       h-full
-      pl-12   /* ⬅️ ini penting */
-      pr-14   /* ⬅️ ini juga */
+      pl-12  
+      pr-14 
       rounded-full 
       bg-gray-200
       focus:bg-white

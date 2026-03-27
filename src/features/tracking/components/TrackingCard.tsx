@@ -18,7 +18,6 @@ export default function TrackingCard({ title, description, fullWidth }: Props) {
     >
       {/* BACKGROUND DECORATION */}
       <div className="absolute right-0 bottom-0 w-40 h-40 bg-white/10 rounded-full blur-2xl" />
-      {/* ini efek lingkaran glow di desain */}
 
       <CardContent className="relative z-10 p-6 space-y-3">
         <h3 className="text-xl font-bold">{title}</h3>
