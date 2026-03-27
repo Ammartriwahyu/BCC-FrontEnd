@@ -30,7 +30,7 @@ export default function Navbar2() {
           <div className="hidden md:flex items-center gap-8">
             <Link href="/perpustakaan">Perpustakaan</Link>
             <Link href="#">Baca Bersama</Link>
-            <Link href="#">Teman</Link>
+            <Link href="/teman">Teman</Link>
           </div>
 
           {/* PROFILE */}
