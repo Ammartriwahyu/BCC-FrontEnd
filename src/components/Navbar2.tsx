@@ -4,57 +4,82 @@ import Link from "next/link";
 import { useState } from "react";
 import ProfileDropdown from "./ProfileDropdown";
 import SearchBar from "./ui/SearchBar";
+import { Menu, X } from "lucide-react";
 
-export default function Navbar() {
-    const [open, setOpen] = useState(false);
+export default function Navbar2() {
+  const [open, setOpen] = useState(false);
+  const [mobileMenu, setMobileMenu] = useState(false);
 
-    const userImage = "";
-    // ini untuk foto profil user
+  return (
+    <nav className="fixed top-0 left-0 w-full z-50 bg-[#FFFDF9]">
 
-    return (
-        <nav className="fixed top-0 left-0 w-full z-50 bg-[#FFFDF9]">
+      <div className="flex justify-between items-center px-6 md:px-20 py-4 md:py-6">
 
-            <div className="flex justify-between items-center px-20 py-6 relative">
+        {/* LEFT */}
+        <div className="flex items-center gap-4 md:gap-8">
+          {/* HAMBURGER (mobile only) */}
+          <button
+            className="md:hidden"
+            onClick={() => setMobileMenu(!mobileMenu)}
+          >
+            {mobileMenu ? <X size={24} /> : <Menu size={24} />}
+          </button>
 
-                {/* LOGO */}
-                <Link href="/home" className="text-xl font-bold">
-                    ReadWrite
-                </Link>
+          <Link href="/home" className="text-lg md:text-xl font-bold">
+            ReadWrite
+          </Link>
+        </div>
 
-                {/* SEARCH */}
-                <div className="w-[300px]">
-                    <SearchBar />
-                </div>
+        {/* SEARCH */}
+        <div className="hidden md:block w-[300px]">
+          <SearchBar />
+        </div>
 
-                {/* MENU */}
-                <div className="flex items-center gap-8">
+        {/* RIGHT */}
+        <div className="flex items-center gap-4 md:gap-8">
 
-                    <Link href="#">Perpustakaan</Link>
-                    <Link href="#">Baca Bersama</Link>
-                    <Link href="#">Teman</Link>
+          {/* MENU DESKTOP */}
+          <div className="hidden md:flex items-center gap-8">
+            <Link href="/perpustakaan">Perpustakaan</Link>
+            <Link href="/read-with-friends">Baca Bersama</Link>
+            <Link href="/teman">Teman</Link>
+          </div>
 
-                    {/* PROFILE ICON */}
-                    <div className="relative">
+          {/* PROFILE */}
+          <div className="relative">
+            <div
+              onClick={() => setOpen(!open)}
+              className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gray-300 cursor-pointer"
+            />
+            <ProfileDropdown open={open} onClose={() => setOpen(false)} />
+          </div>
 
-                        <div
-                            onClick={() => setOpen(!open)}
-                            className="w-10 h-10 rounded-full bg-gray-300 cursor-pointer"
-                        >
-                            {/* ini untuk foto profil user */}
-                        </div>
+        </div>
+      </div>
 
-                        {/* DROPDOWN */}
-                        <ProfileDropdown
-                            open={open}
-                            onClose={() => setOpen(false)}
-                        />
+      {mobileMenu && (
+        <div className="md:hidden px-6 pb-4 space-y-3 bg-[#FFFDF9] border-t">
 
-                    </div>
+          <Link href="/perpustakaan" className="block">
+            Perpustakaan
+          </Link>
 
-                </div>
+          <Link href="#" className="block">
+            Baca Bersama
+          </Link>
 
-            </div>
+          <Link href="/teman" className="block">
+            Teman
+          </Link>
 
-        </nav>
-    );
+          {/*search di mobile */}
+          <div className="pt-2">
+            <SearchBar />
+          </div>
+
+        </div>
+      )}
+
+    </nav>
+  );
 }

@@ -1,20 +1,29 @@
-export default function FriendCard() {
+export default function FriendCard({ user }: any) {
   return (
-    <div className="flex h-[648px] items-center gap-[233px] pt-[66px] pr-[245px] pb-[67px]">
+    <div className="bg-white rounded-2xl p-6 text-center w-full shadow-lg hover:shadow-xl transition">
 
-      <div className="flex w-[520px] flex-col items-start gap-[36px]">
-        <h3 className="self-stretch text-black font-poppins text-[40px] font-bold">
-          Add Friends
-        </h3>
+      <img
+        src={user.image}
+        className="w-16 h-16 rounded-full mx-auto mb-4"
+      />
 
-        <p className="self-stretch text-black font-poppins text-[30px] font-medium">
-          Tambahkan teman untuk melihat aktivitas membaca mereka,
-          berbagi rekomendasi buku, dan menemukan bacaan baru dari
-          orang lain.
-        </p>
+      <h3 className="font-semibold">{user.name}</h3>
+      <p className="text-sm text-neutral-60">{user.username}</p>
+
+      <div className="flex justify-center gap-6 mt-4 text-sm">
+        <div>
+          <p className="font-semibold">{user.books}</p>
+          <p className="text-neutral-60">Buku</p>
+        </div>
+        <div>
+          <p className="font-semibold">{user.friends}</p>
+          <p className="text-neutral-60">Teman</p>
+        </div>
       </div>
 
-      <div className="bg-white rounded-xl shadow-md h-[260px]" />
+      <button className="mt-4 border border-brown-100 text-brown-100 px-4 py-2 rounded-full">
+        Lihat Profile
+      </button>
 
     </div>
   );

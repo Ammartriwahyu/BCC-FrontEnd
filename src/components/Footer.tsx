@@ -1,17 +1,16 @@
+import Image from "next/image";
+
 export default function Footer() {
   return (
-    <footer className="px-20 py-16 bg-[#FFFDF9]">
+    <footer className="px-6 md:px-20 py-12 md:py-16 bg-[#FFFDF9]">
 
-      {/* TOP */}
-      <div className="flex justify-between items-center mb-10">
+      <div className="flex flex-col md:flex-row justify-between items-center gap-8 md:gap-0 mb-10 text-center md:text-left">
 
-        {/* LOGO */}
         <h1 className="text-xl font-bold">
           ReadWrite
         </h1>
 
-        {/* MENU */}
-        <div className="flex gap-10 text-sm text-gray-700">
+        <div className="flex flex-wrap justify-center gap-6 md:gap-10 text-sm text-gray-700">
           <span>Experience</span>
           <span>News</span>
           <span>About us</span>
@@ -19,24 +18,18 @@ export default function Footer() {
           <span>Contact</span>
         </div>
 
-        {/* ICON */}
-        <div className="flex items-center gap-6 text-gray-700">
-
-          {/* ini buat icon instagram */}
-          <div className="w-5 h-5 bg-gray-400 rounded-full" />
-
-          {/* ini buat icon phone */}
-          <div className="w-5 h-5 bg-gray-400 rounded-full" />
-
-          {/* ini buat icon email */}
-          <div className="w-5 h-5 bg-gray-400 rounded-full" />
-
+        <div>
+          <Image
+            src="/assets/icons/component/Social.png"
+            alt="Social Media Icons"
+            width={120}
+            height={30}
+          />
         </div>
 
       </div>
 
-      {/* BOTTOM */}
-      <div className="text-sm text-gray-400">
+      <div className="text-sm text-gray-400 text-center md:text-left">
         © Copyright 2019 - Lift Media
       </div>
 
