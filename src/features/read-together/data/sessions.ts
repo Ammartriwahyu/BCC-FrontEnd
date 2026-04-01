@@ -13,15 +13,15 @@ export type Session = {
     status: "active" | "finished";
 };
 
-export let sessions: Session[] = [];
+export let sessions: any[] = [];
 
-export const addSession = (newSession: Session) => {
+export const addSession = (newSession: any) => {
     sessions.push(newSession);
 };
 
-export const updateSession = (id: string, updatedData: Partial<Session>) => {
+export const updateSession = (id: string, updated: any) => {
     sessions = sessions.map((s) =>
-        s.id === id ? { ...s, ...updatedData } : s
+        s.id === id ? { ...s, ...updated } : s
     );
 };
 

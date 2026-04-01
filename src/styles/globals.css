@@ -7,50 +7,53 @@
 /* DESIGN SYSTEM BRIDGE */
 /* ===================== */
 
-:root {
-  --background: #FFFDF9;
-  /* brown-50 */
-  --foreground: #000000;
-  /* neutral-100 */
-
-  --muted: #f3f3f6;
-  /* neutral-30 */
-  --muted-foreground: #A7A7A7;
-  /* neutral-60 */
-
-  --border: #d9d9d9;
-  /* neutral-40 */
-  --input: #f3f3f6;
-
-  --primary: #A98574;
-  /* brown-70 */
-  --primary-foreground: #ffffff;
-
-  --secondary: #E4D9D4;
-  /* brown-60 */
-  --secondary-foreground: #000000;
-
-  --ring: #A98574;
-}
-
-
 @layer base {
-  * {
-    border-color: var(--border);
-    outline-color: var(--ring);
-  }
+  :root {
+    /* BROWN */
+    --brown-100: #341616;
+    --brown-90: #655046;
+    --brown-80: #987868;
+    --brown-70: #A98574;
+    --brown-60: #E4D9D4;
+    --brown-50: #FFFDF9;
 
+    /* NEUTRAL */
+    --neutral-100: #000000;
+    --neutral-90: #1e1915;
+    --neutral-80: #3c3c3c;
+    --neutral-60: #A7A7A7;
+    --neutral-40: #d9d9d9;
+    --neutral-30: #f3f3f6;
+
+    /* TOGGLE */
+    --toggle: #c74524;
+  }
 
   body {
-    background-color: var(--background);
-    color: var(--foreground);
+    font-family: var(--font-poppins), sans-serif;
   }
 
-  html {
-    font-family: var(--font-poppins);
-  }
 }
 
-.font-poppins {
-  font-family: 'Poppins', sans-serif;
+@layer utilities {
+  .shadow-card {
+    box-shadow: 0 2px 4px -2px rgba(19,25,39,0.12),
+                0 4px 4px -2px rgba(19,25,39,0.08);
+  }
+
+  /* BROWN */
+  .bg-brown-100 { background-color: var(--brown-100); }
+  .bg-brown-90 { background-color: var(--brown-90); }
+  .bg-brown-80 { background-color: var(--brown-80); }
+  .bg-brown-70 { background-color: var(--brown-70); }
+  .bg-brown-60 { background-color: var(--brown-60); }
+  .bg-brown-50 { background-color: var(--brown-50); }
+
+  /* TEXT */
+  .text-brown-100 { color: var(--brown-100); }
+  .text-neutral-80 { color: var(--neutral-80); }
+  .text-neutral-60 { color: var(--neutral-60); }
+
+  
+
 }
