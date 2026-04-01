@@ -15,13 +15,13 @@ export default function BookDetail({ bookId }: { bookId: string }) {
     if (!book) return null;
 
     return (
-        <div className="space-y-8">
+        <div className="space-y-6 md:space-y-8">
 
             {/* TITLE */}
             <div>
-                <h1 className="heading">{book.title}</h1>
+                <h1 className="heading text-xl md:text-2xl">{book.title}</h1>
 
-                <p className="text-neutral-80 mt-3 max-w-[700px]">
+                <p className="text-neutral-80 mt-3 max-w-full md:max-w-[700px] text-sm md:text-base">
                     {book.description}
                 </p>
             </div>
@@ -53,15 +53,16 @@ export default function BookDetail({ bookId }: { bookId: string }) {
 
             {/* BUTTON */}
             {!myReview && (
-                <div className="flex justify-end">
+                <div className="flex justify-start md:justify-end">
                     <button
                         onClick={() => setShowModal(true)}
-                        className="bg-brown-100 text-white px-6 py-3 rounded-xl"
+                        className="bg-brown-100 text-white px-4 md:px-6 py-2 md:py-3 rounded-xl text-sm md:text-base"
                     >
                         Tulis Ulasan
                     </button>
                 </div>
             )}
+
 
             <hr />
 
@@ -69,11 +70,9 @@ export default function BookDetail({ bookId }: { bookId: string }) {
             <div>
                 <h2 className="subheading mb-4">Pembaca juga Menyukai</h2>
 
-                <div className="flex gap-6">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 md:gap-6">
                     {books.slice(0, 4).map((b) => (
-                        <div className="w-[160px]" key={b.id}>
-                            <BookCard book={b} />
-                        </div>
+                        <BookCard key={b.id} book={b} />
                     ))}
                 </div>
             </div>
@@ -87,5 +86,8 @@ export default function BookDetail({ bookId }: { bookId: string }) {
             )}
 
         </div>
+
+
+
     );
 }

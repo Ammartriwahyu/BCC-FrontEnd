@@ -14,7 +14,7 @@ export default function HomePage() {
       <main className="bg-[#FFFDF9] min-h-screen px-20 py-10 space-y-12 pt-[100px]">
 
         {/* TOP */}
-        <div className="flex gap-6">
+        <div className="flex flex-col md:flex-row gap-6">
           <GreetingSection />
           <StreakHomeCard />
         </div>

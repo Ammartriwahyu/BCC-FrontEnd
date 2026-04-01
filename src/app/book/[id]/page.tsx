@@ -15,10 +15,10 @@ export default async function BookPage({
 
             <Navbar2 />
 
-            <div className="pt-[100px] max-w-[1200px] mx-auto flex gap-10 px-6">
+            <div className="pt-[100px] max-w-[1200px] mx-auto flex flex-col md:flex-row gap-6 md:gap-10 px-4 md:px-6">
 
                 {/* LEFT */}
-                <div className="w-[280px] shrink-0">
+                <div className="w-full md:w-[280px] shrink-0">
                     <BookSidebar bookId={id} />
                 </div>
 

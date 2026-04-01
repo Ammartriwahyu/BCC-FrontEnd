@@ -3,14 +3,18 @@
 import { useState } from "react";
 import Navbar2 from "@/components/Navbar2";
 import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/Button";
-import ReadTogetherCard from "@/features/read-together/components/ReadTogetherCard";
 import { sessions } from "@/features/read-together/data/sessions";
+import ReadTogetherCard from "@/features/read-together/components/ReadTogetherCard";
+import { Button } from "@/components/ui/Button";
 import { useRouter } from "next/navigation";
 
-export default function ReadWithFriendsPage() {
-    const [activeTab, setActiveTab] = useState("active");
+export default function Page() {
     const router = useRouter();
+
+    const [activeTab, setActiveTab] = useState("active");
+    const [, setRefresh] = useState(0);
+
+    const refresh = () => setRefresh((p) => p + 1);
 
     const filtered =
         activeTab === "active"
@@ -25,7 +29,7 @@ export default function ReadWithFriendsPage() {
             <div className="pt-[120px] px-6 md:px-20 space-y-10">
 
                 {/* HEADER */}
-                <div className="flex justify-between items-center flex-wrap gap-4">
+                <div className="flex justify-between items-center">
                     <h1 className="text-2xl font-bold">Baca Bersama</h1>
 
                     <Button
@@ -38,7 +42,6 @@ export default function ReadWithFriendsPage() {
 
                 {/* TAB */}
                 <div className="flex gap-6 border-b pb-2">
-
                     <button
                         onClick={() => setActiveTab("active")}
                         className={`pb-2 ${activeTab === "active"
@@ -58,13 +61,16 @@ export default function ReadWithFriendsPage() {
                     >
                         Semua Sesi
                     </button>
-
                 </div>
 
                 {/* LIST */}
                 <div className="space-y-6">
-                    {filtered.map((session) => (
-                        <ReadTogetherCard key={session.id} session={session} />
+                    {filtered.map((s) => (
+                        <ReadTogetherCard
+                            key={s.id}
+                            session={s}
+                            refresh={refresh}
+                        />
                     ))}
                 </div>
 
