@@ -18,12 +18,12 @@ export default function BookSidebar({ bookId }: { bookId: string }) {
 
             <img
                 src={book.image}
-                className="w-full h-[360px] object-cover rounded-xl shadow-card"
+                className="w-full h-[260px] md:h-[360px] object-cover rounded-xl shadow-card"
             />
 
             <StatusDropdown status={status} setStatus={setStatus} />
 
-            <button className="w-full border border-brown-100 py-3 rounded-xl">
+            <button className="w-full border border-brown-100 py-3 rounded-xl text-sm md:text-base">
                 Mulai Membaca Bersama
             </button>
 

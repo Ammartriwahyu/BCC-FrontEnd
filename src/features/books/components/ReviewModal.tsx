@@ -7,14 +7,13 @@ export default function ReviewModal({ onClose, onSubmit }: any) {
     const [text, setText] = useState("");
 
     return (
-        <div className="fixed inset-0 bg-black/40 flex items-center justify-center">
+        <div className="fixed inset-0 bg-black/40 flex items-center justify-center px-4">
 
-            <div className="bg-white p-6 rounded-xl w-[400px] space-y-4">
+            <div className="bg-white p-4 md:p-6 rounded-xl w-full max-w-[400px] space-y-4">
 
-                <h2 className="heading">Tulis Review</h2>
+                <h2 className="heading text-lg md:text-xl">Tulis Review</h2>
 
-                {/* ⭐ STAR */}
-                <div className="flex gap-2 text-3xl">
+                <div className="flex gap-2 text-2xl md:text-3xl">
                     {[1, 2, 3, 4, 5].map((star) => (
                         <span
                             key={star}
@@ -27,17 +26,15 @@ export default function ReviewModal({ onClose, onSubmit }: any) {
                     ))}
                 </div>
 
-                {/* TEXT */}
                 <textarea
                     value={text}
                     onChange={(e) => setText(e.target.value)}
                     placeholder="Bagikan pendapat..."
-                    className="w-full border p-3 rounded-lg"
+                    className="w-full border p-3 rounded-lg text-sm md:text-base"
                 />
 
-                {/* BUTTON */}
                 <div className="flex justify-between gap-3">
-                    <button onClick={onClose} className="border px-4 py-2 rounded">
+                    <button onClick={onClose} className="border px-4 py-2 rounded text-sm md:text-base">
                         Batal
                     </button>
 
@@ -46,18 +43,17 @@ export default function ReviewModal({ onClose, onSubmit }: any) {
                             onSubmit({
                                 rating,
                                 text,
-                                user: "Sany", // nanti dari user store / backend
+                                user: "Sany",
                             });
                             onClose();
                         }}
-                        className="bg-brown-100 text-white px-4 py-2 rounded"
+                        className="bg-brown-100 text-white px-4 py-2 rounded text-sm md:text-base"
                     >
                         Kirim Review
                     </button>
                 </div>
 
             </div>
-
         </div>
     );
 }

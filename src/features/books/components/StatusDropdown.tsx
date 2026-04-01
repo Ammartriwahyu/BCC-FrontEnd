@@ -14,7 +14,7 @@ export default function StatusDropdown({
     const options = ["Ingin Dibaca", "Sedang Dibaca", "Sudah Dibaca"];
 
     return (
-        <div className="relative">
+        <div className="relative w-full">
 
             <button
                 onClick={() => setOpen(!open)}
@@ -25,7 +25,7 @@ export default function StatusDropdown({
             </button>
 
             {open && (
-                <div className="absolute w-full bg-brown-80 rounded-xl mt-2 overflow-hidden">
+                <div className="absolute w-full bg-brown-80 rounded-xl mt-2 overflow-hidden z-10">
                     {options.map((item) => (
                         <div
                             key={item}
