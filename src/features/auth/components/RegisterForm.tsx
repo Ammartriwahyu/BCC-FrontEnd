@@ -29,7 +29,6 @@ export default function RegisterForm() {
         name,
       });
 
-      // auto login biar ga nyusahin user
       const res = await login({
         email,
         password,

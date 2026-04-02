@@ -44,7 +44,6 @@ export async function fetcher<T>(
 
   let res = await doFetch();
 
-  // kalau token expired → refresh
   if (res.status === 401) {
     try {
       await refreshToken();
