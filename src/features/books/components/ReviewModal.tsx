@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useUserStore } from "@/lib/userStore";
 
 export default function ReviewModal({
     onClose,
@@ -9,6 +10,7 @@ export default function ReviewModal({
 }: any) {
     const [rating, setRating] = useState(0);
     const [text, setText] = useState("");
+    const { user } = useUserStore();
 
     return (
         <div className="fixed inset-0 bg-black/40 flex items-center justify-center px-4">
@@ -55,7 +57,7 @@ export default function ReviewModal({
 
 
                             const currentStreak =
-                                Number(localStorage.getItem("streak")) || 0;
+                                user.streak || 0;
 
                             const newStreak = currentStreak + 1;
 

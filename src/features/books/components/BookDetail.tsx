@@ -14,7 +14,7 @@ export default function BookDetail({ bookId }: { bookId: string }) {
     const [showModal, setShowModal] = useState(false);
     const [myReview, setMyReview] = useState<any | null>(null);
 
-    const [showStreak, setShowStreak] = useState(false); // 🔥 TAMBAHAN
+    const [showStreak, setShowStreak] = useState(false); 
 
     if (!book) return null;
 
@@ -85,11 +85,11 @@ export default function BookDetail({ bookId }: { bookId: string }) {
                 <ReviewModal
                     onClose={() => setShowModal(false)}
                     onSubmit={(data: any) => setMyReview(data)}
-                    onStreak={() => setShowStreak(true)} // 🔥 INI KUNCI NYA
+                    onStreak={() => setShowStreak(true)}
                 />
             )}
 
-            {/* 🔥 STREAK CARD */}
+            {/*STREAK CARD */}
             <StreakCard
                 open={showStreak}
                 onClose={() => setShowStreak(false)}

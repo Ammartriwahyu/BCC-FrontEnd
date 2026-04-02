@@ -16,11 +16,11 @@ export default function StreakCard({
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
 
             {/* CARD */}
-            <div className="relative w-[90%] max-w-sm rounded-2xl overflow-hidden bg-white shadow-xl">
+            <div className="relative w-[90%] max-w-sm rounded-2xl overflow-hidden ">
 
                 {/* GIF BACKGROUND */}
                 <Image
-                    src="/assets/streak/Confetti.gif"
+                    src="/assets/images/streak/Confetti.gif"
                     alt="streak effect"
                     width={400}
                     height={600}
@@ -32,7 +32,7 @@ export default function StreakCard({
 
                     {/* IMAGE CARD */}
                     <Image
-                        src="/assets/streak/StreakCard.png" 
+                        src="/assets/images/streak/StreakCard.png" 
                         alt="50 day streak"
                         width={200}
                         height={200}
