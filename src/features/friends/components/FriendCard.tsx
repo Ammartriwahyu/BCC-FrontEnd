@@ -1,9 +1,17 @@
-export default function FriendCard({ user }: any) {
+type Friend = {
+  image: string;
+  name: string;
+  username: string;
+  books: number;
+  friends: number;
+};
+
+export default function FriendCard({ user }: { user: Friend }) {
   return (
     <div className="bg-white rounded-2xl p-6 text-center w-full shadow-lg hover:shadow-xl transition">
-
       <img
         src={user.image}
+        alt={user.name}
         className="w-16 h-16 rounded-full mx-auto mb-4"
       />
 
@@ -21,10 +29,12 @@ export default function FriendCard({ user }: any) {
         </div>
       </div>
 
-      <button className="mt-4 border border-brown-100 text-brown-100 px-4 py-2 rounded-full">
+      <button
+        type="button"
+        className="mt-4 border border-brown-100 text-brown-100 px-4 py-2 rounded-full"
+      >
         Lihat Profile
       </button>
-
     </div>
   );
 }

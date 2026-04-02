@@ -2,58 +2,74 @@
 
 import { useState } from "react";
 
-export default function ReviewModal({ onClose, onSubmit }: any) {
-    const [rating, setRating] = useState(0);
-    const [text, setText] = useState("");
+type ReviewData = {
+  rating: number;
+  text: string;
+  user: string;
+};
 
-    return (
-        <div className="fixed inset-0 bg-black/40 flex items-center justify-center px-4">
+type ReviewModalProps = {
+  onClose: () => void;
+  onSubmit: (data: ReviewData) => void;
+};
 
-            <div className="bg-white p-4 md:p-6 rounded-xl w-full max-w-[400px] space-y-4">
+export default function ReviewModal({ onClose, onSubmit }: ReviewModalProps) {
+  const [rating, setRating] = useState(0);
+  const [text, setText] = useState("");
 
-                <h2 className="heading text-lg md:text-xl">Tulis Review</h2>
+  return (
+    <div className="fixed inset-0 bg-black/40 flex items-center justify-center px-4">
+      <div className="bg-white p-4 md:p-6 rounded-xl w-full max-w-[400px] space-y-4">
+        <h2 className="heading text-lg md:text-xl">Tulis Review</h2>
 
-                <div className="flex gap-2 text-2xl md:text-3xl">
-                    {[1, 2, 3, 4, 5].map((star) => (
-                        <span
-                            key={star}
-                            onClick={() => setRating(star)}
-                            className={`cursor-pointer ${star <= rating ? "text-yellow-400" : "text-gray-300"
-                                }`}
-                        >
-                            ★
-                        </span>
-                    ))}
-                </div>
-
-                <textarea
-                    value={text}
-                    onChange={(e) => setText(e.target.value)}
-                    placeholder="Bagikan pendapat..."
-                    className="w-full border p-3 rounded-lg text-sm md:text-base"
-                />
-
-                <div className="flex justify-between gap-3">
-                    <button onClick={onClose} className="border px-4 py-2 rounded text-sm md:text-base">
-                        Batal
-                    </button>
-
-                    <button
-                        onClick={() => {
-                            onSubmit({
-                                rating,
-                                text,
-                                user: "Sany",
-                            });
-                            onClose();
-                        }}
-                        className="bg-brown-100 text-white px-4 py-2 rounded text-sm md:text-base"
-                    >
-                        Kirim Review
-                    </button>
-                </div>
-
-            </div>
+        <div className="flex gap-2 text-2xl md:text-3xl">
+          {[1, 2, 3, 4, 5].map((star) => (
+            <button
+              type="button"
+              key={star}
+              onClick={() => setRating(star)}
+              className={`cursor-pointer ${
+                star <= rating ? "text-yellow-400" : "text-gray-300"
+              }`}
+              aria-label={`Rate ${star} star`}
+            >
+              ★
+            </button>
+          ))}
         </div>
-    );
+
+        <textarea
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          placeholder="Bagikan pendapat..."
+          className="w-full border p-3 rounded-lg text-sm md:text-base"
+        />
+
+        <div className="flex justify-between gap-3">
+          <button
+            type="button"
+            onClick={onClose}
+            className="border px-4 py-2 rounded text-sm md:text-base"
+          >
+            Batal
+          </button>
+
+          <button
+            type="button"
+            onClick={() => {
+              onSubmit({
+                rating,
+                text,
+                user: "Sany",
+              });
+              onClose();
+            }}
+            className="bg-brown-100 text-white px-4 py-2 rounded text-sm md:text-base"
+          >
+            Kirim Review
+          </button>
+        </div>
+      </div>
+    </div>
+  );
 }

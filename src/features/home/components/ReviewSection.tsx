@@ -10,9 +10,9 @@ export default function ReviewSection() {
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-        {reviews.map((_, i) => (
+        {reviews.map((reviewId) => (
           <ReviewCard
-            key={i}
+            key={reviewId}
             name="SunnySun"
             title="A Good Girl’s Guide to Murder"
             review="Move aside, Nancy Drew! There's a new teen detective in town..."

@@ -1,6 +1,6 @@
-import * as React from "react"
+import type * as React from "react";
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 
 function Input({ className, type, ...props }: React.ComponentProps<"input">) {
   return (
@@ -12,11 +12,11 @@ function Input({ className, type, ...props }: React.ComponentProps<"input">) {
         "placeholder:text-black",
         "focus:ring-2 focus:ring-[#6B4F4F]",
         "disabled:opacity-50",
-        className
+        className,
       )}
       {...props}
     />
-  )
+  );
 }
 
-export { Input }
+export { Input };

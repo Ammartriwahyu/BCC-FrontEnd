@@ -22,9 +22,7 @@ export default function TrackingCard({ title, description, fullWidth }: Props) {
       <CardContent className="relative z-10 p-6 space-y-3">
         <h3 className="text-xl font-bold">{title}</h3>
 
-        <p className="text-sm text-gray-200 max-w-[90%]">
-          {description}
-        </p>
+        <p className="text-sm text-gray-200 max-w-[90%]">{description}</p>
       </CardContent>
     </Card>
   );

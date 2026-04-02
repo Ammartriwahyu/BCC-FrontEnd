@@ -1,10 +1,10 @@
 "use client";
 
+import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import ProfileDropdown from "./ProfileDropdown";
 import SearchBar from "./ui/SearchBar";
-import { Menu, X } from "lucide-react";
 
 export default function Navbar2() {
   const [open, setOpen] = useState(false);
@@ -12,13 +12,12 @@ export default function Navbar2() {
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-[#FFFDF9]">
-
       <div className="flex justify-between items-center px-6 md:px-20 py-4 md:py-6">
-
         {/* LEFT */}
         <div className="flex items-center gap-4 md:gap-8">
           {/* HAMBURGER (mobile only) */}
           <button
+            type="button"
             className="md:hidden"
             onClick={() => setMobileMenu(!mobileMenu)}
           >
@@ -37,7 +36,6 @@ export default function Navbar2() {
 
         {/* RIGHT */}
         <div className="flex items-center gap-4 md:gap-8">
-
           {/* MENU DESKTOP */}
           <div className="hidden md:flex items-center gap-8">
             <Link href="/perpustakaan">Perpustakaan</Link>
@@ -47,19 +45,19 @@ export default function Navbar2() {
 
           {/* PROFILE */}
           <div className="relative">
-            <div
+            <button
+              type="button"
               onClick={() => setOpen(!open)}
               className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gray-300 cursor-pointer"
+              aria-label="Open profile menu"
             />
             <ProfileDropdown open={open} onClose={() => setOpen(false)} />
           </div>
-
         </div>
       </div>
 
       {mobileMenu && (
         <div className="md:hidden px-6 pb-4 space-y-3 bg-[#FFFDF9] border-t">
-
           <Link href="/perpustakaan" className="block">
             Perpustakaan
           </Link>
@@ -76,10 +74,8 @@ export default function Navbar2() {
           <div className="pt-2">
             <SearchBar />
           </div>
-
         </div>
       )}
-
     </nav>
   );
 }

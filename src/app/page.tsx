@@ -1,11 +1,10 @@
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-
-import HeroSection from "@/features/landing/components/HeroSection";
-import FeatureSection from "@/features/landing/components/FeatureSection";
-import StreakSection from "@/features/landing/components/StreakSection";
+import Navbar from "@/components/Navbar";
 import CTASection from "@/features/landing/components/CTASection";
+import FeatureSection from "@/features/landing/components/FeatureSection";
+import HeroSection from "@/features/landing/components/HeroSection";
 import ReviewSection from "@/features/landing/components/ReviewSection";
+import StreakSection from "@/features/landing/components/StreakSection";
 
 export default function Home() {
   return (

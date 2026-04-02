@@ -1,8 +1,8 @@
 "use client";
 
-import * as React from "react";
 import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
 import { Check } from "lucide-react";
+import type * as React from "react";
 
 import { cn } from "@/lib/utils";
 
@@ -17,7 +17,7 @@ function Checkbox({
         "data-[state=checked]:bg-[#6B4F4F] data-[state=checked]:border-[#6B4F4F]",
         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6B4F4F]",
         "disabled:cursor-not-allowed disabled:opacity-50",
-        className
+        className,
       )}
       {...props}
     >

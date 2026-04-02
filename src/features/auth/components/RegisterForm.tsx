@@ -1,11 +1,10 @@
-import { Input } from "@/components/ui/Input";
-import { Button } from "@/components/ui/Button";
 import Link from "next/link";
+import { Button } from "@/components/ui/Button";
+import { Input } from "@/components/ui/Input";
 
 export default function RegisterForm() {
   return (
     <div className="space-y-6">
-
       <h1 className="text-2xl font-bold">ReadWrite</h1>
 
       <div>
@@ -17,24 +16,35 @@ export default function RegisterForm() {
 
       {/* USERNAME */}
       <div className="space-y-2">
-        <label className="font-medium">Username</label>
-        <Input placeholder="Masukkan username" />
+        <label htmlFor="register-username" className="font-medium">
+          Username
+        </label>
+        <Input id="register-username" placeholder="Masukkan username" />
       </div>
 
       {/* EMAIL */}
       <div className="space-y-2">
-        <label className="font-medium">Email</label>
-        <Input placeholder="Masukkan email" />
+        <label htmlFor="register-email" className="font-medium">
+          Email
+        </label>
+        <Input id="register-email" placeholder="Masukkan email" />
       </div>
 
       {/* PASSWORD */}
       <div className="space-y-2">
-        <label className="font-medium">Password</label>
-        <Input type="password" placeholder="Masukkan password" />
+        <label htmlFor="register-password" className="font-medium">
+          Password
+        </label>
+        <Input
+          id="register-password"
+          type="password"
+          placeholder="Masukkan password"
+        />
       </div>
 
       <p className="text-xs text-gray-500">
-        Dengan mendaftar, kamu menyetujui Terms & Conditions serta kebijakan penggunaan platform ini.
+        Dengan mendaftar, kamu menyetujui Terms & Conditions serta kebijakan
+        penggunaan platform ini.
       </p>
 
       <Button variant="cta" className="w-full">
@@ -47,7 +57,6 @@ export default function RegisterForm() {
           Login
         </Link>
       </p>
-
     </div>
   );
 }

@@ -1,24 +1,23 @@
 "use client";
 
-import { Input } from "@/components/ui/Input";
-import { Button } from "@/components/ui/Button";
-import { Checkbox } from "@/components/ui/Checkbox";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { Button } from "@/components/ui/Button";
+import { Checkbox } from "@/components/ui/Checkbox";
+import { Input } from "@/components/ui/Input";
 
 export default function LoginForm() {
   const router = useRouter();
 
   const handleLogin = () => {
     //disini lu masukin logic auth (API)
-    
+
     // sementara dummy dulu
     router.push("/home");
   };
 
   return (
     <div className="space-y-6">
-
       <div>
         <h1 className="text-2xl font-bold">ReadWrite</h1>
       </div>
@@ -32,14 +31,22 @@ export default function LoginForm() {
 
       {/* USERNAME */}
       <div className="space-y-2">
-        <label className="font-medium">Username</label>
-        <Input placeholder="Masukkan username" />
+        <label htmlFor="login-username" className="font-medium">
+          Username
+        </label>
+        <Input id="login-username" placeholder="Masukkan username" />
       </div>
 
       {/* PASSWORD */}
       <div className="space-y-2">
-        <label className="font-medium">Password</label>
-        <Input type="password" placeholder="Masukkan password" />
+        <label htmlFor="login-password" className="font-medium">
+          Password
+        </label>
+        <Input
+          id="login-password"
+          type="password"
+          placeholder="Masukkan password"
+        />
       </div>
 
       {/* REMEMBER */}
@@ -49,17 +56,11 @@ export default function LoginForm() {
           <span>Ingat saya</span>
         </div>
 
-        <span className="text-gray-500 cursor-pointer">
-          Lupa password?
-        </span>
+        <span className="text-gray-500 cursor-pointer">Lupa password?</span>
       </div>
 
       {/* BUTTON */}
-      <Button
-        variant="cta"
-        className="w-full"
-        onClick={handleLogin}
-      >
+      <Button variant="cta" className="w-full" onClick={handleLogin}>
         Login
       </Button>
 
@@ -70,7 +71,6 @@ export default function LoginForm() {
           Register
         </Link>
       </p>
-
     </div>
   );
 }

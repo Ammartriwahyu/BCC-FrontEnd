@@ -1,20 +1,20 @@
 .heading {
-    @apply text-[32px] font-bold;
+  @apply text-[32px] font-bold;
 }
 
 .login-title {
-    @apply text-[36px] font-bold;
+  @apply text-[36px] font-bold;
 }
 
 .subheading {
-    @apply text-[20px] font-semibold;
+  @apply text-[20px] font-semibold;
 }
 
 .body-text {
-    @apply text-[20px] font-normal;
+  @apply text-[20px] font-normal;
 }
 
 .caption {
-    @apply text-sm;
-    color: #A7A7A7;
+  @apply text-sm;
+  color: #a7a7a7;
 }

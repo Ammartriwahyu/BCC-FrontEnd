@@ -5,7 +5,6 @@ export default function StreakHomeCard() {
 
   return (
     <div className="w-full max-w-[350px] bg-gradient-to-br from-[#4B1E1E] to-[#8C5A3C] text-white rounded-2xl p-4 md:p-6 flex flex-col justify-between">
-
       <div>
         <p className="text-2xl md:text-3xl font-bold">{streak}</p>
         <p className="text-xs md:text-sm">Streak Days</p>
@@ -20,7 +19,6 @@ export default function StreakHomeCard() {
           className="w-[50px] md:w-[80px]"
         />
       </div>
-
     </div>
   );
 }
