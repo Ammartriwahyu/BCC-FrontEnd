@@ -2,7 +2,11 @@
 
 import { useState } from "react";
 
-export default function ReviewModal({ onClose, onSubmit }: any) {
+export default function ReviewModal({
+    onClose,
+    onSubmit,
+    onStreak,
+}: any) {
     const [rating, setRating] = useState(0);
     const [text, setText] = useState("");
 
@@ -34,7 +38,10 @@ export default function ReviewModal({ onClose, onSubmit }: any) {
                 />
 
                 <div className="flex justify-between gap-3">
-                    <button onClick={onClose} className="border px-4 py-2 rounded text-sm md:text-base">
+                    <button
+                        onClick={onClose}
+                        className="border px-4 py-2 rounded text-sm md:text-base"
+                    >
                         Batal
                     </button>
 
@@ -45,6 +52,20 @@ export default function ReviewModal({ onClose, onSubmit }: any) {
                                 text,
                                 user: "Sany",
                             });
+
+
+                            const currentStreak =
+                                Number(localStorage.getItem("streak")) || 0;
+
+                            const newStreak = currentStreak + 1;
+
+                            localStorage.setItem("streak", String(newStreak));
+
+
+                            if (newStreak === 50) {
+                                onStreak?.();
+                            }
+
                             onClose();
                         }}
                         className="bg-brown-100 text-white px-4 py-2 rounded text-sm md:text-base"

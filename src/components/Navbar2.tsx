@@ -64,7 +64,7 @@ export default function Navbar2() {
             Perpustakaan
           </Link>
 
-          <Link href="#" className="block">
+          <Link href="/read-with-friends" className="block">
             Baca Bersama
           </Link>
 
