@@ -7,6 +7,7 @@ export const setAccessToken = (token: string) => {
 export const getAccessToken = () => accessToken;
 
 const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
+console.log("🌍 BASE_URL:", BASE_URL);
 
 async function refreshToken() {
   const res = await fetch(`${BASE_URL}/auth/refresh`, {
@@ -29,6 +30,7 @@ export async function fetcher<T>(
   options: RequestInit = {}
 ): Promise<T> {
   const doFetch = async () => {
+    console.log("📡 FETCH KE:", `${BASE_URL}${url}`); 
     return fetch(`${BASE_URL}${url}`, {
       ...options,
       headers: {

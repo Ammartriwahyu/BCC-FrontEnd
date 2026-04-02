@@ -19,6 +19,8 @@ export default function RegisterForm() {
   const [loading, setLoading] = useState(false);
 
   const handleRegister = async () => {
+    console.log("🔥 CLICK REGISTER");
+    console.log({ email, username, name, password });
     try {
       setLoading(true);
 

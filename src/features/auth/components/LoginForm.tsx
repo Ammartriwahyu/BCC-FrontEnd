@@ -18,6 +18,9 @@ export default function LoginForm() {
   const [loading, setLoading] = useState(false);
 
   const handleLogin = async () => {
+    console.log("CLICK LOGIN");
+    console.log("EMAIL:", email);
+    console.log("PASSWORD:", password);
     try {
       setLoading(true);
 

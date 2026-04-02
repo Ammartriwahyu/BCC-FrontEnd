@@ -8,6 +8,7 @@ export const register = async (data: {
     password: string;
     name: string;
 }) => {
+    console.log("🚀 REGISTER FUNCTION KEHIT", data);
     return fetcher("/auth/register", {
         method: "POST",
         body: JSON.stringify(data),
@@ -19,6 +20,7 @@ export const login = async (data: {
     email: string;
     password: string;
 }) => {
+    console.log("🚀 LOGIN FUNCTION KEHIT", data);
     const res = await fetcher<AuthResponse>("/auth/login", {
         method: "POST",
         body: JSON.stringify(data),
