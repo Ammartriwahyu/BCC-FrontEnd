@@ -1,7 +1,10 @@
+"use client";
+
 import Image from "next/image";
 
 export default function StreakHomeCard() {
-  const streak = 12;
+  const { user } = useUserStore();
+  const streak = user.streak;
 
   return (
     <div className="w-full max-w-[350px] bg-gradient-to-br from-[#4B1E1E] to-[#8C5A3C] text-white rounded-2xl p-4 md:p-6 flex flex-col justify-between">
