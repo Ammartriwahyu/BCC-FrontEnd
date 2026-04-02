@@ -1,14 +1,12 @@
-"use client";
-
 export default function GreetingSection() {
-  const { user } = useUserStore();
+  const userName = "Sany";
   // nanti ambil dari backend / context login
 
   return (
     <div className="flex-1 bg-[#C9B458] rounded-2xl p-4 md:p-6 text-white relative">
 
       <h2 className="text-xl md:text-2xl font-bold mb-2">
-        Halo {user.name}!
+        Halo {userName}!
       </h2>
 
       <p className="text-sm md:text-base max-w-full md:max-w-[500px]">
