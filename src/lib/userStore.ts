@@ -25,7 +25,7 @@ export const useUserStore = create<Store>((set) => ({
         username: "@tsanyr",
         bio: "",
         image: "",
-        streak: 12,
+        streak: 49,
         booksRead: 23,
         reviews: 12,
         friends: 6,
