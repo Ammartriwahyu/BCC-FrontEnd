@@ -6,6 +6,7 @@ import { useUserStore } from "@/lib/userStore";
 import { useState } from "react";
 import EditProfileModal from "@/features/profile/components/EditProfileModal";
 import BookCard from "@/features/books/components/BookCard";
+import Image from "next/image";
 
 export default function ProfilePage() {
     const { user } = useUserStore();
@@ -30,7 +31,15 @@ export default function ProfilePage() {
 
                     <div className="flex flex-col sm:flex-row gap-4 md:gap-6">
 
-                        <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-gray-300" />
+                        <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-gray-300">
+                            <Image
+                                src={user.image}
+                                alt="Profile"
+                                width={64}
+                                height={64}
+                                className="w-full h-full object-cover rounded-full"
+                            />
+                        </div>
 
                         <div>
                             <h2 className="text-xl md:text-2xl font-bold">{user.name}</h2>
