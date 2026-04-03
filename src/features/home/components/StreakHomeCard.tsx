@@ -11,7 +11,7 @@ export default function StreakHomeCard() {
 
       <div className="flex items-center gap-2">
         <Image
-          src="/assets/icons/component/Fire.png"
+          src="/assets/icons/component/fire.png"
           alt="Streak Icon"
           width={60} height={60}
           className="w-8 h-8 md:w-12 md:h-12" />

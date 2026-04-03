@@ -26,7 +26,7 @@ export default function Navbar2() {
           </button>
 
           <Link href="/home" className="text-lg md:text-xl font-bold">
-            ReadWrite
+            RumahBaca
           </Link>
         </div>
 
