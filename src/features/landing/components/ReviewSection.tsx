@@ -15,7 +15,7 @@ export default function ReviewSection() {
 
       <div className="flex justify-center">
         <Image
-          src="/assets/images/landing/ReviewPict.png"
+          src="/assets/images/landing/Reviewpict.png"
           alt="Review Cards"
           width={1200}
           height={400}
