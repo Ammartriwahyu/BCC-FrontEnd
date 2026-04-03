@@ -1,24 +1,38 @@
 "use client";
 
+import { useState } from "react";
 import { Input } from "@/components/ui/Input";
 import { Button } from "@/components/ui/Button";
 import { Checkbox } from "@/components/ui/Checkbox";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useUserStore } from "@/lib/userStore";
 
 export default function LoginForm() {
   const router = useRouter();
+  const { updateUser } = useUserStore();
+
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleLogin = () => {
-    
-    
-    
+    updateUser({
+      username: username,
+      name: username,
+      password: password,
+    });
+
     router.push("/home");
   };
 
   return (
-    <div className="space-y-6">
-
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        handleLogin();
+      }}
+      className="space-y-6"
+    >
       <div>
         <h1 className="text-2xl font-bold">RumahBaca</h1>
       </div>
@@ -33,13 +47,24 @@ export default function LoginForm() {
       {/* USERNAME */}
       <div className="space-y-2">
         <label className="font-medium">Username</label>
-        <Input placeholder="Masukkan username" />
+        <Input
+          placeholder="Masukkan username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          required
+        />
       </div>
 
       {/* PASSWORD */}
       <div className="space-y-2">
         <label className="font-medium">Password</label>
-        <Input type="password" placeholder="Masukkan password" />
+        <Input
+          type="password"
+          placeholder="Masukkan password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
       </div>
 
       {/* REMEMBER */}
@@ -55,11 +80,7 @@ export default function LoginForm() {
       </div>
 
       {/* BUTTON */}
-      <Button
-        variant="cta"
-        className="w-full"
-        onClick={handleLogin}
-      >
+      <Button type="submit" variant="cta" className="w-full">
         Login
       </Button>
 
@@ -70,7 +91,6 @@ export default function LoginForm() {
           Register
         </Link>
       </p>
-
-    </div>
+    </form>
   );
 }
