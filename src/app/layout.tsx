@@ -21,7 +21,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "RumahBaca",
-  description: "Website tempat orang suka membaca",
+  description: "Platform social reading Indonesia. Catat baca harian, sambungkan teman, dan mulai baca bareng.",
 };
 
 export default function RootLayout({
