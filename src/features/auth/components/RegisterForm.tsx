@@ -49,7 +49,7 @@ export default function RegisterForm() {
   return (
     <div className="space-y-6">
 
-      <h1 className="text-2xl font-bold">ReadWrite</h1>
+      <h1 className="text-2xl font-bold">RumahBaca</h1>
 
       <div>
         <h2 className="text-3xl font-bold">Selamat Datang!</h2>

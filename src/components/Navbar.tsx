@@ -10,7 +10,7 @@ export default function Navbar() {
         <div className="flex items-center gap-6 md:gap-[70px]">
 
           <div className="text-black font-poppins text-xl md:text-[28px] font-bold">
-            ReadWrite
+            RumahBaca
           </div>
 
           {/* MENU (hidden di mobile) */}
