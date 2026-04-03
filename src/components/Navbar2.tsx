@@ -5,10 +5,13 @@ import { useState } from "react";
 import ProfileDropdown from "./ProfileDropdown";
 import SearchBar from "./ui/SearchBar";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
+import { useUserStore } from "@/lib/userStore";
 
 export default function Navbar2() {
   const [open, setOpen] = useState(false);
   const [mobileMenu, setMobileMenu] = useState(false);
+  const { user } = useUserStore();
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-[#FFFDF9]">
@@ -50,7 +53,15 @@ export default function Navbar2() {
             <div
               onClick={() => setOpen(!open)}
               className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gray-300 cursor-pointer"
-            />
+            >
+              <Image
+                src={user.image}
+                alt="Profile"
+                width={32}
+                height={32}
+                className="w-full h-full object-cover rounded-full"
+              />
+            </div>
             <ProfileDropdown open={open} onClose={() => setOpen(false)} />
           </div>
 

@@ -5,42 +5,22 @@ import { Button } from "@/components/ui/Button";
 import { Checkbox } from "@/components/ui/Checkbox";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
-import { login } from "@/features/auth/api/mutation";
-import { useAuthStore } from "@/lib/auth-store";
 
 export default function LoginForm() {
   const router = useRouter();
-  const setUser = useAuthStore((s) => s.setUser);
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState(false);
-
-  const handleLogin = async () => {
-    try {
-      setLoading(true);
-
-      const res = await login({
-        email,
-        password,
-      });
-
-      setUser(res.user);
-
-      router.push("/home");
-    } catch (err: any) {
-      alert(err.message || "Login gagal");
-    } finally {
-      setLoading(false);
-    }
+  const handleLogin = () => {
+    
+    
+    
+    router.push("/home");
   };
 
   return (
     <div className="space-y-6">
 
       <div>
-        <h1 className="text-2xl font-bold">ReadWrite</h1>
+        <h1 className="text-2xl font-bold">RumahBaca</h1>
       </div>
 
       <div>
@@ -50,25 +30,16 @@ export default function LoginForm() {
         </p>
       </div>
 
-      {/* EMAIL */}
+      {/* USERNAME */}
       <div className="space-y-2">
-        <label className="font-medium">Email</label>
-        <Input
-          placeholder="Masukkan email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
+        <label className="font-medium">Username</label>
+        <Input placeholder="Masukkan username" />
       </div>
 
       {/* PASSWORD */}
       <div className="space-y-2">
         <label className="font-medium">Password</label>
-        <Input
-          type="password"
-          placeholder="Masukkan password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+        <Input type="password" placeholder="Masukkan password" />
       </div>
 
       {/* REMEMBER */}
@@ -88,9 +59,8 @@ export default function LoginForm() {
         variant="cta"
         className="w-full"
         onClick={handleLogin}
-        disabled={loading}
       >
-        {loading ? "Loading..." : "Login"}
+        Login
       </Button>
 
       {/* REGISTER */}

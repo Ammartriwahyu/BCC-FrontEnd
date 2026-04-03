@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { useUserStore } from "@/lib/userStore";
+import Image from "next/image";
 
 type Props = {
     open: boolean;
@@ -16,7 +17,7 @@ export default function ProfileDropdown({ open, onClose }: Props) {
 
     const userName = user.name;
     // nanti dari backend
-    const profileImage = "";
+    const profileImage = user.image;
     // ini untuk foto profil user
 
 
@@ -49,7 +50,13 @@ export default function ProfileDropdown({ open, onClose }: Props) {
                 className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-200 cursor-pointer"
             >
                 <div className="w-8 h-8 rounded-full bg-gray-300">
-                    {/*untuk foto profil */}
+                    <Image
+                        src={profileImage}
+                        alt="Profile"
+                        width={32}
+                        height={32}
+                        className="w-full h-full object-cover rounded-full"
+                    />
                 </div>
                 <span>{userName}</span>
             </div>

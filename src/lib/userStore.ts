@@ -1,6 +1,7 @@
 "use client";
 
 import { create } from "zustand";
+import Image from "next/image";
 
 type User = {
     name: string;
@@ -24,7 +25,7 @@ export const useUserStore = create<Store>((set) => ({
         name: "Sany",
         username: "@tsanyr",
         bio: "",
-        image: "",
+        image: "/assets/images/user/ProfilePict.png",
         streak: 49,
         booksRead: 23,
         reviews: 12,
