@@ -1,46 +1,40 @@
 "use client";
 
+import { useState } from "react";
 import { Input } from "@/components/ui/Input";
 import { Button } from "@/components/ui/Button";
 import { Checkbox } from "@/components/ui/Checkbox";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
-import { login } from "@/features/auth/api/mutation";
-import { useAuthStore } from "@/lib/auth-store";
+import { useUserStore } from "@/lib/userStore";
 
 export default function LoginForm() {
   const router = useRouter();
-  const setUser = useAuthStore((s) => s.setUser);
+  const { updateUser } = useUserStore();
 
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState(false);
 
-  const handleLogin = async () => {
-    try {
-      setLoading(true);
+  const handleLogin = () => {
+    updateUser({
+      username: username,
+      name: username,
+      password: password,
+    });
 
-      const res = await login({
-        email,
-        password,
-      });
-
-      setUser(res.user);
-
-      router.push("/home");
-    } catch (err: any) {
-      alert(err.message || "Login gagal");
-    } finally {
-      setLoading(false);
-    }
+    router.push("/home");
   };
 
   return (
-    <div className="space-y-6">
-
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        handleLogin();
+      }}
+      className="space-y-6"
+    >
       <div>
-        <h1 className="text-2xl font-bold">ReadWrite</h1>
+        <h1 className="text-2xl font-bold">RumahBaca</h1>
       </div>
 
       <div>
@@ -50,13 +44,14 @@ export default function LoginForm() {
         </p>
       </div>
 
-      {/* EMAIL */}
+      {/* USERNAME */}
       <div className="space-y-2">
-        <label className="font-medium">Email</label>
+        <label className="font-medium">Username</label>
         <Input
-          placeholder="Masukkan email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Masukkan username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          required
         />
       </div>
 
@@ -68,6 +63,7 @@ export default function LoginForm() {
           placeholder="Masukkan password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          required
         />
       </div>
 
@@ -84,13 +80,8 @@ export default function LoginForm() {
       </div>
 
       {/* BUTTON */}
-      <Button
-        variant="cta"
-        className="w-full"
-        onClick={handleLogin}
-        disabled={loading}
-      >
-        {loading ? "Loading..." : "Login"}
+      <Button type="submit" variant="cta" className="w-full">
+        Login
       </Button>
 
       {/* REGISTER */}
@@ -100,7 +91,6 @@ export default function LoginForm() {
           Register
         </Link>
       </p>
-
-    </div>
+    </form>
   );
 }
