@@ -35,7 +35,7 @@ export default function Navbar2() {
 
         {/* SEARCH */}
         <div className="hidden md:block w-[300px]">
-          <SearchBar />
+          <SearchBar placeholder="Cari buku favoritmu" />
         </div>
 
         {/* RIGHT */}

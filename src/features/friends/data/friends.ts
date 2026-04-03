@@ -5,7 +5,7 @@ export const friendsData = [
         username: "@BellaSwan",
         books: 89,
         friends: 12,
-        image: "/assets/images/profile.png",
+        image: "/assets/images/user/ProfilePict2.png",
     },
 ];
 
@@ -13,5 +13,5 @@ export const searchUser = {
     id: "olip",
     name: "OlipTelkomsel",
     username: "@olieep",
-    image: "/assets/images/profile2.png",
+    image: "/assets/images/user/ProfilePict3.png",
 };

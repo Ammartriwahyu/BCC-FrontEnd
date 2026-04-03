@@ -18,7 +18,7 @@ export default function HeroSection() {
         </p>
 
         <div className="flex justify-center md:justify-start">
-          <SearchBar />
+          <SearchBar placeholder="Cari buku favoritmu" />
         </div>
       </div>
 
