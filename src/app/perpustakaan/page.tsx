@@ -63,7 +63,7 @@ export default function LibraryPage() {
 
             </div>
 
-            {/* FOOTER */}
+  
             <Footer />
 
         </div>

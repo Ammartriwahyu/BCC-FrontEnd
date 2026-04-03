@@ -10,9 +10,9 @@ export default function LoginForm() {
   const router = useRouter();
 
   const handleLogin = () => {
-    //disini lu masukin logic auth (API)
     
-    // sementara dummy dulu
+    
+    
     router.push("/home");
   };
 

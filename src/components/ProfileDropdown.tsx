@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
+import { useUserStore } from "@/lib/userStore";
 
 type Props = {
     open: boolean;
@@ -11,8 +12,9 @@ type Props = {
 export default function ProfileDropdown({ open, onClose }: Props) {
     const ref = useRef<HTMLDivElement>(null);
     const router = useRouter();
+    const { user } = useUserStore();
 
-    const userName = "Sany";
+    const userName = user.name;
     // nanti dari backend
     const profileImage = "";
     // ini untuk foto profil user
