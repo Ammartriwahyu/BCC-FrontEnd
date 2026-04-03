@@ -1,3 +1,5 @@
+
+
 "use client";
 
 import { useState } from "react";
@@ -5,12 +7,14 @@ import { books } from "../data/books";
 import ReviewModal from "./ReviewModal";
 import ReviewCard from "./ReviewCard";
 import BookCard from "./BookCard";
-
+import StreakCard from "@/components/ui/StreakCard"; 
 export default function BookDetail({ bookId }: { bookId: string }) {
     const book = books.find((b) => b.id === bookId);
 
     const [showModal, setShowModal] = useState(false);
     const [myReview, setMyReview] = useState<any | null>(null);
+
+    const [showStreak, setShowStreak] = useState(false); 
 
     if (!book) return null;
 
@@ -63,7 +67,6 @@ export default function BookDetail({ bookId }: { bookId: string }) {
                 </div>
             )}
 
-
             <hr />
 
             {/* REKOMENDASI */}
@@ -77,17 +80,21 @@ export default function BookDetail({ bookId }: { bookId: string }) {
                 </div>
             </div>
 
-            {/* MODAL */}
+            {/* MODAL REVIEW */}
             {showModal && (
                 <ReviewModal
                     onClose={() => setShowModal(false)}
                     onSubmit={(data: any) => setMyReview(data)}
+                    onStreak={() => setShowStreak(true)}
                 />
             )}
 
+            {/*STREAK CARD */}
+            <StreakCard
+                open={showStreak}
+                onClose={() => setShowStreak(false)}
+            />
+
         </div>
-
-
-
     );
 }

@@ -11,7 +11,7 @@ export default function AuthLayout({
 }) {
     const pathname = usePathname();
 
-    // tentuin gambar berdasarkan route
+    
     const imageSrc =
         pathname === "/login"
             ? "/assets/images/auth/Login.png"

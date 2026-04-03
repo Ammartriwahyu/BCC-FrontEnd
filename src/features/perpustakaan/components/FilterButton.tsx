@@ -11,7 +11,7 @@ export default function FilterButton({
         <Button
             onClick={onClick}
             className={`
-        rounded-full px-6 py-2 text-sm
+        rounded-full px-6 py-2 text-sm 
         ${active
                     ? "!bg-brown-100 !text-white"
                     : "!bg-brown-80 !text-white"}

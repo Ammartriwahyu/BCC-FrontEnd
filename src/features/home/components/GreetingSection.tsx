@@ -1,12 +1,15 @@
+"use client";
+
+import { useUserStore } from "@/lib/userStore";
+
 export default function GreetingSection() {
-  const userName = "Sany";
-  // nanti ambil dari backend / context login
+  const { user } = useUserStore();
 
   return (
     <div className="flex-1 bg-[#C9B458] rounded-2xl p-4 md:p-6 text-white relative">
 
       <h2 className="text-xl md:text-2xl font-bold mb-2">
-        Halo {userName}!
+        Halo {user.name}!
       </h2>
 
       <p className="text-sm md:text-base max-w-full md:max-w-[500px]">
