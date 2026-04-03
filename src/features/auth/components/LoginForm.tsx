@@ -6,7 +6,7 @@ import { Checkbox } from "@/components/ui/Checkbox";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { login } from "@/features/auth/apimutation";
+import { login } from "@/features/auth/api/mutation";
 import { useAuthStore } from "@/lib/auth-store";
 
 export default function LoginForm() {
