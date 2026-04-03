@@ -5,22 +5,42 @@ import { Button } from "@/components/ui/Button";
 import { Checkbox } from "@/components/ui/Checkbox";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { login } from "@/features/auth/api/mutation";
+import { useAuthStore } from "@/lib/auth-store";
 
 export default function LoginForm() {
   const router = useRouter();
+  const setUser = useAuthStore((s) => s.setUser);
 
-  const handleLogin = () => {
-    
-    
-    
-    router.push("/home");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleLogin = async () => {
+    try {
+      setLoading(true);
+
+      const res = await login({
+        email,
+        password,
+      });
+
+      setUser(res.user);
+
+      router.push("/home");
+    } catch (err: any) {
+      alert(err.message || "Login gagal");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <div className="space-y-6">
 
       <div>
-        <h1 className="text-2xl font-bold">RumahBaca</h1>
+        <h1 className="text-2xl font-bold">ReadWrite</h1>
       </div>
 
       <div>
@@ -30,16 +50,25 @@ export default function LoginForm() {
         </p>
       </div>
 
-      {/* USERNAME */}
+      {/* EMAIL */}
       <div className="space-y-2">
-        <label className="font-medium">Username</label>
-        <Input placeholder="Masukkan username" />
+        <label className="font-medium">Email</label>
+        <Input
+          placeholder="Masukkan email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
       </div>
 
       {/* PASSWORD */}
       <div className="space-y-2">
         <label className="font-medium">Password</label>
-        <Input type="password" placeholder="Masukkan password" />
+        <Input
+          type="password"
+          placeholder="Masukkan password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
       </div>
 
       {/* REMEMBER */}
@@ -59,8 +88,9 @@ export default function LoginForm() {
         variant="cta"
         className="w-full"
         onClick={handleLogin}
+        disabled={loading}
       >
-        Login
+        {loading ? "Loading..." : "Login"}
       </Button>
 
       {/* REGISTER */}
